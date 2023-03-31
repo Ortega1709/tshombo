@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">16dp</dimen> <!-- padding dimens -->
+    <dimen name="radius">16dp</dimen> <!-- radius dimens -->
+    <dimen name="height">60dp</dimen> <!-- height dimens -->
+
+    <dimen name="h1">19dp</dimen> <!-- h1 text -->
+    <dimen name="h2">17dp</dimen> <!-- h2 dimens -->
+    <dimen name="h3">15dp</dimen> <!-- h3 dimens -->
+
+    <dimen name="h4">13dp</dimen> <!-- h4 dimens -->
+    <dimen name="heightBetween">16dp</dimen> <!-- height between two widgets dimens -->
+
+</resources>

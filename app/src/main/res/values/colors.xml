@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="background">#FFFFFF</color> <!-- color for background app -->
+    <color name="secondary">#FF2A41CB</color> <!-- color for background button -->
+    <color name="third">#F5F6F8</color> <!-- color for text form field app -->
+
+    <color name="fourth">#FFA0A6A8</color> <!-- color for text on formulary -->
+    <color name="fifth">#FFD6D6D6</color> <!-- color long cast text -->
+    <color name="sixth">#FFD6D6D6</color> <!-- color white for all -->
+
+    <color name="seventh">#FF000000</color> <!-- color black for all -->
+    <color name="transparent">#00000000</color>
+
 </resources>

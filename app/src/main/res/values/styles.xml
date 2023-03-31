@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle">
+        <item name="android:textColor">@color/sixth</item>
+        <item name="android:height">@dimen/height</item>
+        <item name="android:textSize">@dimen/h3</item>
+        <item name="cornerRadius">@dimen/radius</item>
+        <item name="fontFamily">@font/intermedium</item>
+        <item name="textAllCaps">false</item>
+        <item name="backgroundTint">@color/secondary</item>
+    </style>
+
+    <style name="InputFieldStyle">
+        <item name="android:textColor">@color/seventh</item>
+        <item name="android:textSize">@dimen/h3</item>
+    </style>
+
+
+
+</resources>

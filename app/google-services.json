@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "991359770448",
+    "project_id": "tshombo-bc613",
+    "storage_bucket": "tshombo-bc613.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991359770448:android:fd56982c66fa1970485655",
+        "android_client_info": {
+          "package_name": "com.ortega.tshombo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991359770448-todeqvevfv5jqu0fj6jv8785dihj8ib8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFHGsQwD8mz21-SbUSpf3zU1Mt1jRU2bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991359770448-todeqvevfv5jqu0fj6jv8785dihj8ib8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

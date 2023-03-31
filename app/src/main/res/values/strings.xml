@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">tshombo</string>
+    <string name="app_name">Tshombo</string>
+    <string name="send">Send</string>
+    <string name="name">Nom</string>
+    <string name="number">Numero</string>
+    <string name="button_people">Button People</string>
+    <string name="button_schedule">Button Schedule</string>
 </resources>
