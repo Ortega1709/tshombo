@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#FFFFFF</color> <!-- color for background app -->
-    <color name="secondary">#FF2A41CB</color> <!-- color for background button -->
-    <color name="third">#F5F6F8</color> <!-- color for text form field app -->
+    <color name="background">#FF151419</color> <!-- color for background app -->
+    <color name="secondary">#FF302E38</color> <!-- color for background button -->
+    <color name="third">#FF302E38</color> <!-- color for text form field app -->
 
-    <color name="fourth">#FFA0A6A8</color> <!-- color for text on formulary -->
+    <color name="fourth">#FFFFFF</color> <!-- color for text on formulary -->
     <color name="fifth">#FFD6D6D6</color> <!-- color long cast text -->
     <color name="sixth">#FFD6D6D6</color> <!-- color white for all -->
 

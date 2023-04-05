@@ -1,30 +1,18 @@
 package com.ortega.tshombo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.ortega.tshombo.models.MarqueModel;
-
-import java.util.Objects;
+import com.ortega.tshombo.models.TelephoneModel;
+import com.ortega.tshombo.services.TelephoneService;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputEditText nomEditText;
-    MaterialButton sendButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +21,20 @@ public class MainActivity extends AppCompatActivity {
 
         this.initialize();
 
-
     }
+
 
     private void initialize() {
 
+        TelephoneService telephoneService = new TelephoneService();
+        TelephoneModel telephoneModel = new TelephoneModel(
+                "",
+                "Samsung",
+                "Samsung galaxy s21",
+                "Samsung galaxy s21 32Gb RAM, 512Gb",
+                250.000);
 
-
+        telephoneService.delete("-NSIut0kUZSl-_TWg2XD");
     }
 
 }
