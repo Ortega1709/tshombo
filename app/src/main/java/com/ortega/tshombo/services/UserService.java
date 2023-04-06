@@ -5,6 +5,7 @@ import com.ortega.tshombo.models.UserModel;
 import com.ortega.tshombo.utils.FIrebaseUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -16,11 +17,6 @@ public class UserService implements Services<UserModel> {
     @Override
     public void save(UserModel data) {
         databaseReference.child(this.table).push().setValue(data);
-    }
-
-    @Override
-    public void get(String id) {
-
     }
 
     @Override
@@ -38,8 +34,5 @@ public class UserService implements Services<UserModel> {
         databaseReference.child(this.table).child(id).removeValue();
     }
 
-    @Override
-    public void getAll() {
 
-    }
 }

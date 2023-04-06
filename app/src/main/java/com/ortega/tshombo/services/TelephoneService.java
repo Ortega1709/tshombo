@@ -1,11 +1,18 @@
 package com.ortega.tshombo.services;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.annotations.NotNull;
+import com.google.firebase.database.ValueEventListener;
 import com.ortega.tshombo.models.TelephoneModel;
 import com.ortega.tshombo.utils.FIrebaseUtil;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TelephoneService implements Services<TelephoneModel> {
@@ -18,9 +25,6 @@ public class TelephoneService implements Services<TelephoneModel> {
         databaseReference.child(this.table).push().setValue(data);
     }
 
-    @Override
-    public void get(String id) {
-    }
 
     @Override
     public void update(TelephoneModel data, String id) {
@@ -36,8 +40,6 @@ public class TelephoneService implements Services<TelephoneModel> {
         databaseReference.child(this.table).child(id).removeValue();
     }
 
-    @Override
-    public void getAll() {
 
-    }
+
 }

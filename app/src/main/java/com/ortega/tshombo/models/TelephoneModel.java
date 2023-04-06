@@ -7,26 +7,31 @@ public class TelephoneModel {
     private String marque;
     private String nom;
     private String description;
-    private double prix;
+    private String prix;
+    private String photo;
 
-    public TelephoneModel(String id, String idMagasin, String marque, String nom, String description, double prix) {
+    public TelephoneModel(String id, String idMagasin, String marque, String nom, String description, String prix, String photo) {
         this.id = id;
         this.idMagasin = idMagasin;
         this.marque = marque;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
+        this.photo = photo;
     }
 
-    public TelephoneModel(String idMagasin, String marque, String nom, String description, double prix) {
+    public TelephoneModel(String idMagasin, String marque, String nom, String description, String prix, String photo) {
         this.idMagasin = idMagasin;
         this.marque = marque;
         this.nom = nom;
         this.description = description;
         this.prix = prix;
+        this.photo = photo;
     }
 
+    public TelephoneModel() {
 
+    }
 
     public String getId() {
         return id;
@@ -48,9 +53,11 @@ public class TelephoneModel {
         return description;
     }
 
-    public double getPrix() {
+    public String getPrix() {
         return prix;
     }
 
-
+    public String getPhoto() {
+        return photo;
+    }
 }
