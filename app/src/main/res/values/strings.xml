@@ -5,4 +5,18 @@
     <string name="number">Numero</string>
     <string name="button_people">Button People</string>
     <string name="button_schedule">Button Schedule</string>
+    <string name="loading">Chargement …</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Accueil</string>
+    <string name="search">Recherche</string>
+    <string name="stores">Magasins</string>
+    <string name="my_store">Mon magasin</string>
+    <string name="logout">Déconnexion</string>
+    <string name="personal_actions">Actions</string>
+    <string name="open_nav">Open Drawer</string>
+    <string name="close_nav">Close Drawer</string>
+    <string name="store_not_found">Vous n\'avez aucun magasin</string>
+    <string name="create_store">Passer à nos bureau afin de créer votre magasin.</string>
+    <string name="share">Partager</string>
 </resources>

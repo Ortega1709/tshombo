@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="bottom"
+    android:background="@color/background"
+    android:padding="@dimen/padding"
+    android:elevation="@dimen/h3"
+    android:layout_height="172dp">
+
+    <TextView
+        android:id="@+id/username"
+        android:text="Ortega"
+        android:textColor="@color/fourth"
+        android:fontFamily="@font/intermedium"
+        android:textStyle="bold"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:text="kabweortega@gmail.com"
+        android:textColor="@color/fourth"
+        android:fontFamily="@font/intermedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

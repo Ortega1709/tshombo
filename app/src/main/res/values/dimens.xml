@@ -10,5 +10,7 @@
 
     <dimen name="h4">13dp</dimen> <!-- h4 dimens -->
     <dimen name="heightBetween">16dp</dimen> <!-- height between two widgets dimens -->
+    <dimen name="heightToolBar">56dp</dimen> <!-- height between two widgets dimens -->
+    <dimen name="elevation">16dp</dimen> <!-- height between two widgets dimens -->
 
 </resources>
