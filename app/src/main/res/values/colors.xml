@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#FF151419</color> <!-- color for background app -->
-    <color name="secondary">#FF302E38</color> <!-- color for background button -->
-    <color name="third">#FF302E38</color> <!-- color for text form field app -->
+    <color name="background">#FF181820</color> <!-- color for background app -->
+    <color name="secondary">#FF5468FD</color> <!-- color for background button -->
+    <color name="third">#FF262A35</color> <!-- color for text form field app -->
 
     <color name="fourth">#FFFFFF</color> <!-- color for text on formulary -->
     <color name="fifth">#FFD6D6D6</color> <!-- color long cast text -->

@@ -6,7 +6,6 @@
     <string name="button_people">Button People</string>
     <string name="button_schedule">Button Schedule</string>
     <string name="loading">Chargement …</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Accueil</string>
     <string name="search">Recherche</string>
@@ -19,4 +18,18 @@
     <string name="store_not_found">Vous n\'avez aucun magasin</string>
     <string name="create_store">Passer à nos bureau afin de créer votre magasin.</string>
     <string name="share">Partager</string>
+    <string name="todo">TODO</string>
+    <string name="authentication">Authentification</string>
+    <string name="please_auth">Authentifiez-vous afin d\'accéder à l\'interface d\'accueil.</string>
+    <string name="connection">Connexion</string>
+    <string name="dont_account_text">Vous n\'avez pas de compte ?</string>
+    <string name="create_account">Créer un compte</string>
+    <string name="email">E-mail</string>
+    <string name="passwd">Mot de passe</string>
+    <string name="create_account_continue">Veuillez créer un compte avant de continuer.</string>
+    <string name="login">Se connecter</string>
+    <string name="already_account">Déjà un compte chez nous ?</string>
+    <string name="username">Nom d\'utilisateur</string>
+    <string name="you_have_create_account">Vous avez crée un compte</string>
+    <string name="all_fields_required">Tous les champs sont réquis</string>
 </resources>
