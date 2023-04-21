@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "491577442518",
-    "project_id": "tshombo-c47be",
-    "storage_bucket": "tshombo-c47be.appspot.com"
+    "project_number": "460409506451",
+    "project_id": "tshombo",
+    "storage_bucket": "tshombo.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:491577442518:android:df3c1796fac9f0c7a88977",
+        "mobilesdk_app_id": "1:460409506451:android:88cb2ac82fbe318a14db66",
         "android_client_info": {
           "package_name": "com.ortega.tshombo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "491577442518-vd1gfh3irm8ttfvm51job51b8e883p8f.apps.googleusercontent.com",
+          "client_id": "460409506451-8vnetrmedfrnk4j2fd9jnrp9g7fsms60.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAOTCfNp6_EFn8nzPsWCV5fP52wYp9PCg0"
+          "current_key": "AIzaSyAeIkk5SRHNnfuoRXKch5we5mvVULIgGOk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "491577442518-vd1gfh3irm8ttfvm51job51b8e883p8f.apps.googleusercontent.com",
+              "client_id": "460409506451-8vnetrmedfrnk4j2fd9jnrp9g7fsms60.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
