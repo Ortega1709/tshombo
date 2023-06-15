@@ -1,47 +1,148 @@
 package com.ortega.tshombo.screens;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.ortega.tshombo.DetailPhone;
+import com.ortega.tshombo.MapsActivity;
 import com.ortega.tshombo.R;
+import com.ortega.tshombo.adapters.PhoneAdapter;
+import com.ortega.tshombo.models.PromotionModel;
+import com.ortega.tshombo.models.TelephoneModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class HomeFragment extends Fragment {
 
+    TextView showMore;
+    DatabaseReference databaseReference;
+    DatabaseReference databaseReferenceSlide;
+    List<SlideModel> slideModels;
+    ImageSlider imageSlider;
+    PhoneAdapter phoneAdapter;
+    ArrayList<TelephoneModel> telephoneArrayList;
+    RecyclerView recyclerView;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-        ImageSlider imageSlider = view.findViewById(R.id.slider);
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
 
-        List<SlideModel> slideModels = new ArrayList<>();
+    @SuppressLint("NotifyDataSetChanged")
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-        slideModels.add(new SlideModel("https://i0.wp.com/dz-mobiles.com/wp-content/uploads/2017/02/ooredoo_condor_promotion.jpg?resize=800%2C444&ssl=1", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://www.lesmobiles.com/img/actus/Promo-smartphone-Ce-smartphone-Samsung-pas-cher-est-prix-cass-chez-ce-marchand-1677763723-large.jpg", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://www.edcom.fr/img/actus/Black-Friday-iPhone-13-et-Iphone-13-mini-en-promo-chez-RED-by-SFR-1637847923-large.jpg", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://s.alicdn.com/@sc04/kf/Hd59205ed49144d74aa2be89466263390j.jpg", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://pic.clubic.com/v1/images/2045745/raw?fit=max&width=1200&hash=c2505eaadac79e2c5eb36637e893356732b4f650", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://d1fmx1rbmqrxrr.cloudfront.net/cnet/optim/i/edit/2022/11/iphone-14-1200__w570.jpg", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://www.android-mt.com/wp-content/uploads/2021/06/RSminote10.jpg.webp", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://fimgkzkm.filerobot.com/cms/pages+app/APP/LANDING_APP_01-FR-fr.png?vh=adc648", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://cdn-uploads.gameblog.fr/img/good_deal/416764_63eb83659475f.jpg?ver=1", ScaleTypes.CENTER_CROP));
-        slideModels.add(new SlideModel("https://pic.clubic.com/v1/images/1968105/raw?fit=max&width=1200&hash=4d7b6cbfcbc89369872fe88939871058c8c71f8f", ScaleTypes.CENTER_CROP));
+        dataInitialize();
+        sliderInitialize();
 
-        imageSlider.setImageList(slideModels);
+        recyclerView = view.findViewById(R.id.recyclerViewPhone);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        showMore = view.findViewById(R.id.showMore);
 
-        return view;
+        phoneAdapter = new PhoneAdapter(getContext(), telephoneArrayList, telephoneModel -> {
+            Intent intent = new Intent(getContext(), DetailPhone.class);
+            intent.putExtra("name", telephoneModel.getNom());
+            intent.putExtra("uuid", telephoneModel.getId());
+            startActivity(intent);
+        });
+
+        recyclerView.setAdapter(phoneAdapter);
+        recyclerView.setClickable(true);
+
+        phoneAdapter.notifyDataSetChanged();
+        showMore = view.findViewById(R.id.showMore);
+        imageSlider = view.findViewById(R.id.slider);
+
+
+
+        showMore.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), MapsActivity.class);
+            startActivity(intent);
+        });
+
+    }
+
+    private void sliderInitialize() {
+        slideModels = new ArrayList<>();
+
+        databaseReferenceSlide = FirebaseDatabase.getInstance().getReference("promotions");
+        databaseReferenceSlide.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                slideModels.clear();
+                for (DataSnapshot itemSnapshot: snapshot.getChildren()) {
+
+                    PromotionModel promotionModel = itemSnapshot.getValue(PromotionModel.class);
+                    assert promotionModel != null;
+                    slideModels.add(new SlideModel(promotionModel.getPromotion(), ScaleTypes.CENTER_CROP));
+
+                }
+                imageSlider.setImageList(slideModels);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void dataInitialize() {
+
+        telephoneArrayList = new ArrayList<>();
+        databaseReference = FirebaseDatabase.getInstance().getReference("telephones");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                telephoneArrayList.clear();
+                for (DataSnapshot itemSnapshot: snapshot.getChildren()) {
+
+                    TelephoneModel telephoneModel = itemSnapshot.getValue(TelephoneModel.class);
+                    assert telephoneModel != null;
+                    telephoneModel.setId(itemSnapshot.getKey());
+                    System.out.println("[id] " + itemSnapshot.getKey());
+                    telephoneArrayList.add(telephoneModel);
+                }
+                phoneAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
     }
 }

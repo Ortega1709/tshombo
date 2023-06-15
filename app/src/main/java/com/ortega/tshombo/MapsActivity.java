@@ -1,7 +1,9 @@
 package com.ortega.tshombo;
 
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -11,6 +13,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.ortega.tshombo.databinding.ActivityMapsBinding;
+import com.ortega.tshombo.utils.LongLatUtil;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -27,6 +30,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        assert mapFragment != null;
         mapFragment.getMapAsync(this);
     }
 
@@ -42,10 +46,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setZoomGesturesEnabled(true);
+
+        mMap.getUiSettings().setCompassEnabled(true);
+
+        String[] coord = LongLatUtil.splitCoord("-11.62318005718133,27.460311196864563");
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        LatLng sydney = new LatLng(Double.parseDouble(coord[0]), Double.parseDouble(coord[1]));
+        mMap.addMarker(new MarkerOptions().position(sydney).title("My Home"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

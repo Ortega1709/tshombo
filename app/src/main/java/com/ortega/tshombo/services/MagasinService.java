@@ -27,7 +27,6 @@ public class MagasinService implements Services<MagasinModel> {
         Map<String, Object> updateData = new HashMap<>();
         updateData.put(id, data);
 
-
         databaseReference.child(this.table).updateChildren(updateData);
     }
 

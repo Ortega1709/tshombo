@@ -18,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(
                 () -> {
                     Intent intent =
-                            new Intent(SplashScreenActivity.this, LoginActivity.class);
+                            new Intent(SplashScreenActivity.this, MainActivity.class);
 
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);

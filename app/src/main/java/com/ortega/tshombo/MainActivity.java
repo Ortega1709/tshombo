@@ -7,27 +7,27 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.ortega.tshombo.models.UserModel;
 import com.ortega.tshombo.screens.HomeFragment;
 import com.ortega.tshombo.screens.MyStoreFragment;
 import com.ortega.tshombo.screens.SearchFragment;
 import com.ortega.tshombo.screens.StoreFragment;
+import com.ortega.tshombo.services.LocalDataService;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     MaterialToolbar materialToolbar;
+
+
 
     TextView emailTextView;
 
@@ -36,17 +36,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        // get extra data
-        Bundle extra = getIntent().getExtras();
-        if (extra != null) {
-            String email = extra.getString("user_email");
-            emailTextView.setText(email);
-        }
+        //LocalDataService localDataService = new LocalDataService(this);
+        //localDataService.show();
 
         // disable night theme
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
+        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+ 
         // setup tool bar
         materialToolbar = findViewById(R.id.toolBar);
         materialToolbar.setTitle(R.string.home);
@@ -132,4 +127,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
+
 }

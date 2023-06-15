@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Tshombo</string>
+    <string name="app_name_handler">Handler</string>
+    <string name="app_name_drawer">DrawApp</string>
+    <string name="draw">Draw</string>
     <string name="send">Send</string>
     <string name="name">Nom</string>
     <string name="number">Numero</string>
@@ -32,4 +35,24 @@
     <string name="username">Nom d\'utilisateur</string>
     <string name="you_have_create_account">Vous avez crée un compte</string>
     <string name="all_fields_required">Tous les champs sont réquis</string>
+    <string name="voir_plus">Voir plus</string>
+    <string name="populaires">Populaires</string>
+    <string name="samsung_s23">Samsung s23</string>
+    <string name="_982000fc">982000fc</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="av_mascherano_33">Av. mascherano, 33</string>
+    <string name="mwisho_ni_apa">Mwisho ni apa</string>
+    <string name="_150_t_l_phones">150 téléphones</string>
+    <string name="loc"> -11.6207777,27.530394,12z</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="magasin">Magasin</string>
+    <string name="google_maps">Google maps</string>
+    <string name="normal_click">Normal Click</string>
+    <string name="long_click">Long Click</string>
+    <string name="custom_message">I\'m Android Developer</string>
+    <string name="start_draw_something">Start draw something</string>
+    <string name="bleu">Bleue</string>
+    <string name="jaune">Jaune</string>
+    <string name="verte">Verte</string>
+    <string name="rouge">Rouge</string>
 </resources>

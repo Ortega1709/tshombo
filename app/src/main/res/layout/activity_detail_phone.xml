@@ -1,0 +1,300 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".DetailPhone">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/heightToolBar"
+                android:background="@color/background"
+                android:elevation="@dimen/elevation"
+                app:navigationIcon="@drawable/arrow_back"
+                android:foregroundTint="@color/fourth"
+                app:navigationIconTint="@color/fourth"
+                app:popupTheme="@color/fourth"
+                app:titleCentered="true"
+                app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                app:titleTextColor="@color/fourth" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_margin="@dimen/padding"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/detailPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/third"
+                    android:backgroundTint="@color/third"
+                    android:elevation="@dimen/elevation"
+                    app:cardCornerRadius="@dimen/radius"
+                    app:contentPadding="@dimen/padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/head"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardViewPhoneImg"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:backgroundTint="@color/third"
+                                tools:ignore="MissingConstraints">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/phoneSheapeImg"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/phone3"
+                                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/padding"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/phoneMarque"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intermedium"
+                                    android:text="@string/samsung_s23"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                    android:textColor="@color/fourth" />
+
+                                <TextView
+                                    android:id="@+id/phonePrice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intermedium"
+                                    android:text="@string/_982000fc"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                    android:textColor="@color/fourth" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1.5dp"
+                            android:layout_marginTop="@dimen/padding"
+                            android:layout_marginBottom="@dimen/padding"
+                            android:background="@color/fourth" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/phoneDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/intermedium"
+                                android:text="@string/lorem"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                android:textColor="@color/fourth"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:id="@+id/plusAndPop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/heightBetween"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/detailPhone">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/intermedium"
+                            android:text="@string/magasin"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                            android:textColor="@color/fourth"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/third"
+                    android:backgroundTint="@color/third"
+                    android:layout_marginTop="@dimen/heightBetween"
+                    android:elevation="@dimen/elevation"
+                    app:cardCornerRadius="@dimen/radius"
+                    app:contentPadding="@dimen/padding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plusAndPop"
+                    tools:ignore="MissingConstraints">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/headExp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cardViewPhoneImgExp"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:backgroundTint="@color/third"
+                                tools:ignore="MissingConstraints">
+
+                                <com.google.android.material.imageview.ShapeableImageView
+                                    android:id="@+id/phoneSheapeImgExp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/background"
+                                    android:src="@drawable/store_icon"
+                                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/padding"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/magasinName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intermedium"
+                                    android:text="@string/mwisho_ni_apa"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                    android:textColor="@color/fourth"/>
+
+                                <TextView
+                                    android:id="@+id/magasinAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intermedium"
+                                    android:text="@string/av_mascherano_33"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                    android:textColor="@color/fourth" />
+
+                                <TextView
+                                    android:id="@+id/nbrPhone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/intermedium"
+                                    android:text="@string/_150_t_l_phones"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                    android:textColor="@color/fourth" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="1.5dp"
+                            android:layout_marginTop="@dimen/padding"
+                            android:layout_marginBottom="@dimen/padding"
+                            android:background="@color/fourth" />
+
+                        <LinearLayout
+                            android:id="@+id/go"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/intermedium"
+                                android:text="@string/google_maps"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                                android:textColor="@color/secondary"
+                                app:layout_constraintBottom_toBottomOf="parent" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
+

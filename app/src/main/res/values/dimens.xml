@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="padding">16dp</dimen> <!-- padding dimens -->
     <dimen name="radius">16dp</dimen> <!-- radius dimens -->
     <dimen name="height">60dp</dimen> <!-- height dimens -->
@@ -11,9 +12,14 @@
     <dimen name="h4">13dp</dimen> <!-- h4 dimens -->
     <dimen name="heightBetween">16dp</dimen> <!-- height between two widgets dimens -->
     <dimen name="heightToolBar">56dp</dimen> <!-- height between two widgets dimens -->
+
     <dimen name="elevation">16dp</dimen> <!-- height between two widgets dimens -->
     <dimen name="heightTwoText">8dp</dimen> <!-- height between two text dimens -->
     <dimen name="heightFormField">55dp</dimen> <!-- height form dimens -->
+
     <dimen name="heightButton">65dp</dimen> <!-- height form dimens -->
+    <dimen name="paddingText">2dp</dimen> <!-- padding text dimens -->
+    <dimen name="cardHeight">110dp</dimen> <!-- card height dimens -->
+    <dimen name="marginCard">10dp</dimen> <!-- card height dimens -->
 
 </resources>

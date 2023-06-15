@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DrawActivity"
+    tools:ignore="MissingClass">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightToolBar"
+        android:background="@color/background"
+        app:titleTextColor="@color/fourth"
+        app:titleCentered="true"
+        app:menu="@menu/app_bar_menu"
+        app:navigationIcon="@drawable/erase"
+        app:title="@string/app_name_drawer"
+        app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:foregroundTint="@color/fourth"
+        app:popupTheme="@color/fourth"
+        app:navigationIconTint="@color/fourth"
+        android:elevation="@dimen/elevation"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="56dp"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/view_draw"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnDraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/background"
+        android:layout_gravity="bottom|right"
+        android:contentDescription="@string/start_draw_something"
+        android:text="@string/draw"
+        app:icon="@drawable/edit"
+        android:textColor="@color/text_shadow_white"
+        app:iconTint="@color/text_shadow_white"
+        tools:ignore="RtlHardcoded" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
