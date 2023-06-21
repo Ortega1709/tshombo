@@ -20,6 +20,7 @@
     <dimen name="heightButton">65dp</dimen> <!-- height form dimens -->
     <dimen name="paddingText">2dp</dimen> <!-- padding text dimens -->
     <dimen name="cardHeight">110dp</dimen> <!-- card height dimens -->
-    <dimen name="marginCard">10dp</dimen> <!-- card height dimens -->
+    <dimen name="marginCard">10dp</dimen>
+    <dimen name="fab_margin">16dp</dimen> <!-- card height dimens -->
 
 </resources>
