@@ -12,14 +12,16 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo_app"
-        android:label="Drawer Fragment Normal App"
+        android:label="Json"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tshombo"
         tools:targetApi="31">
         <activity
-            android:name=".DrawerFragmentActivity"
-            android:exported="true">
+            android:name=".DataActivity"
+            android:exported="true"
+            android:label="@string/title_activity_data"
+            android:theme="@style/Theme.Tshombo">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +30,9 @@
             </intent-filter>
 
         </activity>
+        <activity
+            android:name=".DrawerFragmentActivity"
+            android:exported="false" />
         <activity
             android:name=".FragmentActivity"
             android:exported="false">

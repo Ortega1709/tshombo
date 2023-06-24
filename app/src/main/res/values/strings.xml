@@ -105,4 +105,6 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="go_to_first_fragment">Go to first fragment</string>
+    <string name="title_activity_data">DataActivity</string>
 </resources>

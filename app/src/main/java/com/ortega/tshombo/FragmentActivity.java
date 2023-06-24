@@ -16,16 +16,11 @@ public class FragmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
 
-        btnClick = findViewById(R.id.normalClick);
-
         // config fragment
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new FirstFragment()).commit();
         }
 
-        // clickListener
-        btnClick.setOnClickListener(v -> getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_container, new SecondFragment()).commit());
     }
 }
