@@ -19,4 +19,6 @@ public class MyStoreFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_my_store, container, false);
     }
+
+
 }

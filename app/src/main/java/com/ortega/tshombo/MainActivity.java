@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //localDataService.show();
 
         // disable night theme
-        // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
  
-        // setup tool bar
         materialToolbar = findViewById(R.id.toolBar);
         materialToolbar.setTitle(R.string.home);
         setSupportActionBar(materialToolbar);

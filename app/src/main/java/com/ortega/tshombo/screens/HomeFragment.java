@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.ortega.tshombo.DetailPhone;
 import com.ortega.tshombo.MapsActivity;
 import com.ortega.tshombo.R;
+import com.ortega.tshombo.SearchActivity;
 import com.ortega.tshombo.adapters.PhoneAdapter;
 import com.ortega.tshombo.models.PromotionModel;
 import com.ortega.tshombo.models.TelephoneModel;
@@ -83,10 +84,9 @@ public class HomeFragment extends Fragment {
         showMore = view.findViewById(R.id.showMore);
         imageSlider = view.findViewById(R.id.slider);
 
-
-
         showMore.setOnClickListener(v -> {
-
+            Intent intent = new Intent(getContext(), SearchActivity.class);
+            startActivity(intent);
         });
 
     }

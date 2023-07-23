@@ -32,6 +32,12 @@ public class PhoneAdapter extends RecyclerView.Adapter<PhoneAdapter.MyViewHolder
         this.telephoneModelArrayList = telephoneModelArrayList;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    public void setFilteredList(ArrayList<TelephoneModel> filteredList) {
+        this.telephoneModelArrayList = filteredList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,7 +53,7 @@ public class PhoneAdapter extends RecyclerView.Adapter<PhoneAdapter.MyViewHolder
         holder.bind(telephoneModelArrayList.get(position), clickListener);
 
         TelephoneModel telephoneModel = telephoneModelArrayList.get(position);
-        holder.phonePrice.setText(telephoneModel.getPrix() + " fc");
+        holder.phonePrice.setText(telephoneModel.getPrix() + " Fc");
         holder.phoneMarque.setText(telephoneModel.getNom());
 
         Picasso.get()

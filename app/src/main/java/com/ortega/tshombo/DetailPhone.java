@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ortega.tshombo.models.MagasinModel;
 import com.ortega.tshombo.models.TelephoneModel;
+import com.squareup.picasso.Picasso;
 
 import java.util.Objects;
 
@@ -30,6 +33,8 @@ public class DetailPhone extends AppCompatActivity {
     TextView phoneModele, phonePrice, phoneDesc;
 
     TextView magasinName, magasinAddress;
+
+    ShapeableImageView phoneSheapeImg;
 
     LinearLayout goMaps;
 
@@ -78,6 +83,7 @@ public class DetailPhone extends AppCompatActivity {
         phoneModele = findViewById(R.id.phoneMarque);
         phonePrice = findViewById(R.id.phonePrice);
         phoneDesc = findViewById(R.id.phoneDesc);
+        phoneSheapeImg = findViewById(R.id.phoneSheapeImg);
 
         magasinName = findViewById(R.id.magasinName);
         magasinAddress = findViewById(R.id.magasinAddress);
@@ -101,6 +107,12 @@ public class DetailPhone extends AppCompatActivity {
                         phoneModele.setText(telephoneModel.getNom());
                         phonePrice.setText(telephoneModel.getPrix() + " Fc");
                         phoneDesc.setText(telephoneModel.getDescription());
+
+                        Picasso.get()
+                                .load(Uri.parse(telephoneModel.getPhoto()))
+                                .centerCrop()
+                                .resize(1000,1000)
+                                .into(phoneSheapeImg);
 
                         dataInitializeMagasin(telephoneModel.getIdMagasin());
                         break;
