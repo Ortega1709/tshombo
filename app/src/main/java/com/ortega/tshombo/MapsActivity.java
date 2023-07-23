@@ -19,6 +19,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+    private String localization, magasin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         assert mapFragment != null;
         mapFragment.getMapAsync(this);
+
+        localization = getIntent().getStringExtra("localization");
+        magasin = getIntent().getStringExtra("magasin");
+
     }
 
     /**
@@ -52,12 +57,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setZoomGesturesEnabled(true);
 
         mMap.getUiSettings().setCompassEnabled(true);
+        mMap.setMinZoomPreference(18);
 
-        String[] coord = LongLatUtil.splitCoord("-11.62318005718133,27.460311196864563");
+        String[] coord = LongLatUtil.splitCoord(localization);
 
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(Double.parseDouble(coord[0]), Double.parseDouble(coord[1]));
-        mMap.addMarker(new MarkerOptions().position(sydney).title("My Home"));
+        mMap.addMarker(new MarkerOptions().position(sydney).title(magasin));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

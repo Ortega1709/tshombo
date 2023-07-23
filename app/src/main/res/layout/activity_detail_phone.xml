@@ -149,7 +149,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/heightBetween"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     app:layout_constraintTop_toBottomOf="@id/detailPhone">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -239,15 +239,6 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/intermedium"
                                     android:text="@string/av_mascherano_33"
-                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                                    android:textColor="@color/fourth" />
-
-                                <TextView
-                                    android:id="@+id/nbrPhone"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/intermedium"
-                                    android:text="@string/_150_t_l_phones"
                                     android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
                                     android:textColor="@color/fourth" />
 

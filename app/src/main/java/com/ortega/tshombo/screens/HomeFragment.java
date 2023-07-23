@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
 
         phoneAdapter = new PhoneAdapter(getContext(), telephoneArrayList, telephoneModel -> {
             Intent intent = new Intent(getContext(), DetailPhone.class);
-            intent.putExtra("name", telephoneModel.getNom());
+            intent.putExtra("marque", telephoneModel.getMarque());
             intent.putExtra("uuid", telephoneModel.getId());
             startActivity(intent);
         });
@@ -86,8 +86,7 @@ public class HomeFragment extends Fragment {
 
 
         showMore.setOnClickListener(v -> {
-            Intent intent = new Intent(getContext(), MapsActivity.class);
-            startActivity(intent);
+
         });
 
     }

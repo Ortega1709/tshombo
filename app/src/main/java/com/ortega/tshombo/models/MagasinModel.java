@@ -29,6 +29,10 @@ public class MagasinModel {
     public MagasinModel() {
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }

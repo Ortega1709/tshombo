@@ -33,6 +33,10 @@ public class TelephoneModel {
 
     }
 
+    public void setIdMagasin(String idMagasin) {
+        this.idMagasin = idMagasin;
+    }
+
     public void setId(String id) {
         this.id = id;
     }

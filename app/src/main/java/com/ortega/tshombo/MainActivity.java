@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -83,13 +85,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .replace(R.id.fragment_container, new HomeFragment()).commit();
 
                 materialToolbar.setTitle(R.string.home);
-                break;
-
-            case R.id.nav_search:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new SearchFragment()).commit();
-
-                materialToolbar.setTitle(R.string.search);
                 break;
 
             case R.id.nav_store:
