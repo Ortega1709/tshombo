@@ -11,10 +11,6 @@
             android:icon="@drawable/home_icon"
             android:title="@string/home" />
 
-        <item
-            android:id="@+id/nav_store"
-            android:icon="@drawable/store_icon"
-            android:title="@string/stores" />
 
         <item
             android:id="@+id/my_store"

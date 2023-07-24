@@ -8,8 +8,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     MaterialToolbar materialToolbar;
 
-
+    SharedPreferences pref;
 
     TextView emailTextView;
 
@@ -71,6 +74,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigationView.setCheckedItem(R.id.nav_home);
         }
 
+        pref = getApplicationContext().getSharedPreferences("userData", 0);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.username);
+        TextView navEmail = (TextView) headerView.findViewById(R.id.email);
+
+        navUsername.setText(pref.getString("username", null));
+        navEmail.setText(pref.getString("email", null));
 
     }
 
@@ -86,13 +96,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 materialToolbar.setTitle(R.string.home);
                 break;
 
-            case R.id.nav_store:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, new StoreFragment()).commit();
-
-                materialToolbar.setTitle(R.string.stores);
-                break;
-
             case R.id.my_store:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new MyStoreFragment()).commit();
@@ -101,11 +104,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_share:
-                Toast.makeText(this, R.string.share, Toast.LENGTH_SHORT).show();
+
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "link to playstore app";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+
                 break;
 
             case R.id.nav_logout:
-                Toast.makeText(this, R.string.logout, Toast.LENGTH_SHORT).show();
+
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.apply();
+
+                Intent intent = new Intent(this, LoginActivity.class);
+
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
                 break;
         }
 

@@ -126,6 +126,7 @@
                     android:layout_height="@dimen/heightButton"
                     android:layout_marginTop="@dimen/heightBetween"
                     android:fontFamily="@font/intermedium"
+                    android:backgroundTint="@color/secondary"
                     android:text="@string/create_account"
                     android:textAllCaps="false"
                     android:textColor="@color/fourth"

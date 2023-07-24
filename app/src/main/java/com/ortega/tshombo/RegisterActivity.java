@@ -2,6 +2,7 @@ package com.ortega.tshombo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -40,9 +41,14 @@ public class RegisterActivity extends AppCompatActivity {
         createBtn = findViewById(R.id.create_btn);
 
         usernameText = findViewById(R.id.input_username);
+        usernameText.setTextColor(Color.WHITE);
+
         emailText = findViewById(R.id.input_email);
+        emailText.setTextColor(Color.WHITE);
 
         passwdText = findViewById(R.id.input_passwd);
+        passwdText.setTextColor(Color.WHITE);
+
         progressBar = findViewById(R.id.progress);
 
     }

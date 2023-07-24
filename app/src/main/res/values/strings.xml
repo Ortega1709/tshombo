@@ -108,4 +108,11 @@
     <string name="go_to_first_fragment">Go to first fragment</string>
     <string name="title_activity_data">DataActivity</string>
     <string name="t_l_phone_non_trouv">Téléphone non trouvé</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="ajouter_un_t_l_phone">Ajouter un téléphone</string>
+    <string name="nom">Nom</string>
+    <string name="prix">Prix</string>
+    <string name="description">Description</string>
+    <string name="photo">Photo</string>
+    <string name="enregistrer">Enregistrer</string>
 </resources>
